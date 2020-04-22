@@ -4,13 +4,18 @@ import React from 'react';
 
 
 const FilterSearch = (props) => {
+
+    const updateInputValue=(evt) => {
+        props.handleInputValue(evt.currentTarget.value);
+    };
+
+    
   return (
-      <div className="characterCard-container">
-           <img src={props.img} alt={props.name} />
-           <h4>{props.name}</h4>
-           <p>{props.specie}</p>
-           <p>{props.gender}</p>
-      </div>
+      <form className="filterSearch-container">
+          <label>¡Busca tu personaje!</label>
+          <input type='text' value={props.value} onChange={updateInputValue}/>
+
+      </form>
     );
 
 } 

@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React from 'react';
-import './App.css';
+import '../stylesheets/_app.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,8 +9,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-
+      <div className="app-container">
+            hola
       </div>
     );
   }

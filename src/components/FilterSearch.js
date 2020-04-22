@@ -3,7 +3,7 @@ import React from 'react';
 
 
 
-const CharacterCard = (props) => {
+const FilterSearch = (props) => {
   return (
       <div className="characterCard-container">
            <img src={props.img} alt={props.name} />
@@ -17,4 +17,4 @@ const CharacterCard = (props) => {
   
   
 
-export default CharacterCard;
+export default FilterSearch;

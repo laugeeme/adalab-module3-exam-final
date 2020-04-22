@@ -4,15 +4,17 @@ import '../stylesheets/_app.scss';
 import fetchData from '../services/Fetch';
 import CharacterList from './CharacterList';
 import FilterSearch from './FilterSearch';
+import CharacterDetail from './CharacterDetail';
+import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleInputValue = this.handleInputValue.bind(this);
+    this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
     this.state = {
       data: [],
       value: '',
-      
     };
   }
 
@@ -24,21 +26,37 @@ class App extends React.Component {
     });
   }
 
-
-
-  handleInputValue(inputValue){
+  handleInputValue(inputValue) {
     this.setState({
       value: inputValue,
     });
   }
 
+  renderCharacterDetail(props) {
+    const routeID = props.match.params.id;
+    const data = this.state.data;
+    console.log(data);
 
+    for (let dataItem of data) {
+      if (dataItem.id === parseInt(routeID)) {
+        return <CharacterDetail dataObj={dataItem} />;
+      }
+    }
+  }
 
   render() {
     return (
       <div className="app-container">
-        <FilterSearch handleInputValue={this.handleInputValue}/>
-        <CharacterList data={this.state.data} inputValue={this.state.value} />
+        <Switch>
+          <Route exact path="/">
+            <FilterSearch handleInputValue={this.handleInputValue} />
+            <CharacterList
+              data={this.state.data}
+              inputValue={this.state.value}
+            />
+          </Route>
+          <Route path="/detail/:id" render={this.renderCharacterDetail}></Route>
+        </Switch>
       </div>
     );
   }

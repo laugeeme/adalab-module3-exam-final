@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React from 'react';
 import CharacterCard from './CharacterCard';
+import { Link } from 'react-router-dom';
 
 const CharacterList = (props) => {
   return (
@@ -14,12 +15,14 @@ const CharacterList = (props) => {
         )
         .map((dataObj) => (
           <li key={dataObj.id}>
-            <CharacterCard
-              img={dataObj.image}
-              name={dataObj.name}
-              gender={dataObj.gender}
-              specie={dataObj.species}
-            />
+            <Link to={`/detail/${dataObj.id}`}>
+              <CharacterCard
+                img={dataObj.image}
+                name={dataObj.name}
+                gender={dataObj.gender}
+                specie={dataObj.species}
+              />
+            </Link>
           </li>
         ))}
     </ul>

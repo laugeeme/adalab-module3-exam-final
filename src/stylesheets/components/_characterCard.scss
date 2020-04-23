@@ -1,10 +1,57 @@
-.characterCard-container{
-    text-decoration: none;
-    width: 100px;
-    height: 200px;
-    color: black;
+.characterCard-container {
+  text-decoration: none;
+  color: black;
+  border: solid 2px black;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #86c345;
 
-    & img{
-        width: 100px;
+  & img {
+    width: 200px;
+    border-radius: 20px;
+
+    @include forTablet {
+      width: 220px;
     }
+
+    @include forPc {
+      width: 240px;
+    }
+  }
+
+  & h4 {
+    font-size: 16px;
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+
+    @include forTablet {
+      font-size: 20px;
+      width: 220px;
+      height: 60px;
+    }
+
+    @include forPc {
+      font-size: 22px;
+      width: 240px;
+      height: 60px;
+    }
+  }
+
+  & p {
+    font-size: 14px;
+
+    @include forTablet {
+        font-size: 16px;
+
+      }
+  
+      @include forPc {
+        font-size: 18px;
+
+      }
+  }
 }

@@ -1,0 +1,67 @@
+.characterDetail-container {
+  width: 220px;
+  text-decoration: none;
+  color: black;
+  border: solid 2px black;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #86c345;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:30px;
+
+
+  @include forTablet {
+    width: 240px;
+  }
+
+  @include forPc {
+    width: 260px;
+  }
+
+
+  & img {
+    width: 220px;
+    border-radius: 20px;
+
+    @include forTablet {
+      width: 240px;
+    }
+
+    @include forPc {
+      width: 260px;
+    }
+  }
+
+  & h4 {
+    font-size: 16px;
+    background-color: white;
+    width: 220px;
+    height: 50px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+
+    @include forTablet {
+        width: 240px;
+        font-size: 20px;
+      }
+  
+      @include forPc {
+        width: 260px;
+        font-size: 22px;
+      }
+  }
+
+  & p {
+    font-size: 14px;
+
+    @include forTablet {
+        font-size: 16px;
+      }
+  
+      @include forPc {
+        font-size: 18px;
+      }
+  }
+}

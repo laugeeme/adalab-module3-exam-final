@@ -6,15 +6,17 @@ import PropTypes from 'prop-types';
 const CharacterDetail = (props) => {
   const { image, name, species, origin, status, episode } = props.dataObj;
   return (
-    <div className="characterDetail-container">
+    <React.Fragment>
+      <div className="characterDetail-container">
+        <img src={image} alt={name} />
+        <h4>{name}</h4>
+        <p>Specie: {species}</p>
+        <p>Origin: {origin.name}</p>
+        <p>Status: {status}</p>
+        <p>Number of episodes: {episode.length}</p>
+      </div>
       <Link to="/main">Back</Link>
-      <img src={image} alt={name} />
-      <h4>{name}</h4>
-      <p>Specie: {species}</p>
-      <p>Origin: {origin.name}</p>
-      <p>Status: {status}</p>
-      <p>Number of episodes: {episode.length}</p>
-    </div>
+    </React.Fragment>
   );
 };
 

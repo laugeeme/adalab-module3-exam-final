@@ -1,35 +1,33 @@
-.characterList-container{
+.characterList-container {
+  padding-left: 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 400px 400px 400px 400px 400px 400px 400px 400px 400px 400px 400px;
+  list-style-type: none;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 400px 400px 400px 400px 400px 400px 400px 400px 400px 400px;
-    list-style-type: none;
 
-
-
-   @include forTablet{
+  @include forTablet {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows:300px 300px 300px 300px 300px;
-   }
+    grid-template-rows: 500px 500px 500px 500px 500px;
+  }
 
-   @include forPc{
+  @include forPc {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows:300px 300px 300px 300px;
+    grid-template-rows: 500px 500px 500px 500px;
+  }
 
-   }
+  & .characterListLi {
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
 
+    & h
 
-
-    & .characterListLi {
-
-
-
-        & a {
-
-           text-decoration: none;  
-        }
-       
+    & img {
     }
 
-
+    & a {
+      text-decoration: none;
+    }
+  }
 }

@@ -1,0 +1,59 @@
+.header-container {
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  text-align: center;
+
+  & h1 {
+    padding-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+
+    @include forTablet {
+      font-size: 28px;
+    }
+
+    @include forPc {
+      font-size: 40px;
+    }
+  }
+
+  & img {
+    margin-top: 20px;
+    width: 180px;
+
+    @include forTablet {
+      width: 300px;
+    }
+
+    @include forPc {
+      width: 500px;
+    }
+  }
+
+  .goLink-container {
+    margin-top: 40px;
+
+    & .goLink {
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      background-color: #86c345;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 30px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      @include forTablet {
+        font-size: 30px;
+      }
+
+      @include forPc {
+        font-size: 40px;
+      }
+    }
+  }
+}

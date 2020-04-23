@@ -9,7 +9,7 @@ const FilterSearch = (props) => {
 
   return (
     <form className="filterSearch-container">
-      <label htmlFor="value">¡ Browse your character !</label>
+      <label htmlFor="value">Write something: </label>
       <input
         type="text"
         value={props.value}

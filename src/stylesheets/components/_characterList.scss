@@ -1,0 +1,35 @@
+.characterList-container{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 400px 400px 400px 400px 400px 400px 400px 400px 400px 400px;
+    list-style-type: none;
+
+
+
+   @include forTablet{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:300px 300px 300px 300px 300px;
+   }
+
+   @include forPc{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:300px 300px 300px 300px;
+
+   }
+
+
+
+    & .characterListLi {
+
+
+
+        & a {
+
+           text-decoration: none;  
+        }
+       
+    }
+
+
+}

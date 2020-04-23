@@ -2,12 +2,13 @@
 import React from 'react';
 import '../stylesheets/_app.scss';
 import fetchData from '../services/Fetch';
+import Header from './Header';
 import CharacterList from './CharacterList';
 import FilterSearch from './FilterSearch';
 import CharacterDetail from './CharacterDetail';
 import { Switch, Route } from 'react-router-dom';
 import NoResults from './NoResults';
-import PageNotFound from './PageNotFound';
+/* import PageNotFound from './PageNotFound';  */
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class App extends React.Component {
     this.handleInputValue = this.handleInputValue.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
     this.getDataFromApi = this.getDataFromApi.bind(this);
-    this.sortAlphabetical = this.sortAlphabetical.bind(this);
+    /*     this.sortAlphabetical = this.sortAlphabetical.bind(this); */
 
     this.state = {
       data: [],
@@ -31,7 +32,7 @@ class App extends React.Component {
     });
   }
 
-  sortAlphabetical() {
+  /*   sortAlphabetical() {
     this.state.data.sort((a, b) => {
       if (a.data.name > b.data.name) {
         return 1;
@@ -41,11 +42,11 @@ class App extends React.Component {
       }
       return 0;
     });
-  }
+  } */
 
   componentDidMount() {
     this.getDataFromApi();
-    this.sortAlphabetical();
+    /*    this.sortAlphabetical(); */
   }
 
   handleInputValue(inputValue) {
@@ -63,7 +64,7 @@ class App extends React.Component {
         return <CharacterDetail dataObj={dataItem} />;
       } /* else {
         return <PageNotFound />;
-      } */
+      }  */
     }
   }
 
@@ -71,18 +72,25 @@ class App extends React.Component {
     const { data, value } = this.state;
     return (
       <div className="app-container">
-        <Switch>
-          <Route exact path="/">
-            <FilterSearch
-              handleInputValue={this.handleInputValue}
-              value={value}
-            />
+        <Header />
+        <main id="main">
+          <Switch>
+            <Route exact path="/main" >
+              <FilterSearch
+                handleInputValue={this.handleInputValue}
+                value={value}
+              />
 
-            <CharacterList data={data} inputValue={value} />
-            <NoResults value={value}/>
-          </Route>
-          <Route path="/detail/:id" render={this.renderCharacterDetail}></Route>
-        </Switch>
+              <CharacterList data={data} inputValue={value} />
+              <NoResults value={value} />
+            </Route>
+            <Route
+              path="/detail/:id"
+              render={this.renderCharacterDetail}
+            ></Route>
+          </Switch>
+        </main>
+        <footer className="footer-container"></footer>
       </div>
     );
   }

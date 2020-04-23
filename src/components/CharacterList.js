@@ -5,24 +5,22 @@ import { Link } from 'react-router-dom';
 import NoResults from './NoResults';
 
 const CharacterList = (props) => {
-
   if (props.data.length === 0) {
-    return <NoResults />
-
-  }else {
-
-
+    return <NoResults />;
+  } else {
     return (
       <ul className="characterList-container">
         {props.data
-  
+
           .filter(
             (dataObj) =>
               props.inputValue === '' ||
-              dataObj.name.toLowerCase().includes(props.inputValue.toLowerCase())
+              dataObj.name
+                .toLowerCase()
+                .includes(props.inputValue.toLowerCase())
           )
           .map((dataObj) => (
-            <li key={dataObj.id}>
+            <li key={dataObj.id} className="characterListLi">
               <Link to={`/detail/${dataObj.id}`}>
                 <CharacterCard
                   img={dataObj.image}
@@ -35,11 +33,7 @@ const CharacterList = (props) => {
           ))}
       </ul>
     );
-
-
-
   }
-
 };
 
 export default CharacterList;

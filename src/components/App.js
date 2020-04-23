@@ -6,12 +6,17 @@ import CharacterList from './CharacterList';
 import FilterSearch from './FilterSearch';
 import CharacterDetail from './CharacterDetail';
 import { Switch, Route } from 'react-router-dom';
+import NoResults from './NoResults';
+import PageNotFound from './PageNotFound';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleInputValue = this.handleInputValue.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
+    this.getDataFromApi = this.getDataFromApi.bind(this);
+    this.sortAlphabetical = this.sortAlphabetical.bind(this);
+
     this.state = {
       data: [],
       value: '',
@@ -24,26 +29,23 @@ class App extends React.Component {
         data: data.results,
       });
     });
-
   }
 
-
- /*  sortAlphabetical(){
-    this.state.data.sort((a,b)=> {
-      if (a.this.state.data.name > b.this.state.data.name) {
+  sortAlphabetical() {
+    this.state.data.sort((a, b) => {
+      if (a.data.name > b.data.name) {
         return 1;
       }
-      if (a.this.state.data.name < b.this.state.data.name) {
+      if (a.data.name < b.data.name) {
         return -1;
       }
       return 0;
-    })
-
-  } */
+    });
+  }
 
   componentDidMount() {
     this.getDataFromApi();
-/*     this.sortAlphabetical(); */
+    this.sortAlphabetical();
   }
 
   handleInputValue(inputValue) {
@@ -55,28 +57,29 @@ class App extends React.Component {
   renderCharacterDetail(props) {
     const routeID = props.match.params.id;
     const data = this.state.data;
-    console.log(data);
 
     for (let dataItem of data) {
       if (dataItem.id === parseInt(routeID)) {
         return <CharacterDetail dataObj={dataItem} />;
-      }
+      } /* else {
+        return <PageNotFound />;
+      } */
     }
   }
 
   render() {
-    const {data, value} = this.state;
+    const { data, value } = this.state;
     return (
       <div className="app-container">
         <Switch>
           <Route exact path="/">
-            <FilterSearch handleInputValue={this.handleInputValue} value={value}/>
-
-            <CharacterList
-              data={data}
-              inputValue={value}
-            
+            <FilterSearch
+              handleInputValue={this.handleInputValue}
+              value={value}
             />
+
+            <CharacterList data={data} inputValue={value} />
+            <NoResults value={value}/>
           </Route>
           <Route path="/detail/:id" render={this.renderCharacterDetail}></Route>
         </Switch>

@@ -9,7 +9,7 @@ const CharacterDetail = (props) => {
     <div className="characterDetail-container">
       <Link to="/">Back</Link>
       <img src={image} alt={name} />
-      <h4>{props.dataObj.name}</h4>
+      <h4>{name}</h4>
       <p>Specie: {species}</p>
       <p>Origin: {origin.name}</p>
       <p>Status: {status}</p>
@@ -26,7 +26,7 @@ CharacterDetail.propTypes = {
   species: PropTypes.string.isRequired,
   gender: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
-  episode: PropTypes.number.isRequired,
+ 
 };
 
 

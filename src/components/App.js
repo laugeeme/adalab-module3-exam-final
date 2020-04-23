@@ -18,12 +18,16 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  getDataFromApi() {
     fetchData().then((data) => {
       this.setState({
         data: data.results,
       });
     });
+  }
+
+  componentDidMount() {
+    this.getDataFromApi();
   }
 
   handleInputValue(inputValue) {
@@ -49,7 +53,7 @@ class App extends React.Component {
       <div className="app-container">
         <Switch>
           <Route exact path="/">
-            <FilterSearch handleInputValue={this.handleInputValue} />
+            <FilterSearch handleInputValue={this.handleInputValue} value={this.state.value}/>
             <CharacterList
               data={this.state.data}
               inputValue={this.state.value}

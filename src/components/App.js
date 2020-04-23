@@ -24,10 +24,26 @@ class App extends React.Component {
         data: data.results,
       });
     });
+
   }
+
+
+ /*  sortAlphabetical(){
+    this.state.data.sort((a,b)=> {
+      if (a.this.state.data.name > b.this.state.data.name) {
+        return 1;
+      }
+      if (a.this.state.data.name < b.this.state.data.name) {
+        return -1;
+      }
+      return 0;
+    })
+
+  } */
 
   componentDidMount() {
     this.getDataFromApi();
+/*     this.sortAlphabetical(); */
   }
 
   handleInputValue(inputValue) {
@@ -49,14 +65,17 @@ class App extends React.Component {
   }
 
   render() {
+    const {data, value} = this.state;
     return (
       <div className="app-container">
         <Switch>
           <Route exact path="/">
-            <FilterSearch handleInputValue={this.handleInputValue} value={this.state.value}/>
+            <FilterSearch handleInputValue={this.handleInputValue} value={value}/>
+
             <CharacterList
-              data={this.state.data}
-              inputValue={this.state.value}
+              data={data}
+              inputValue={value}
+            
             />
           </Route>
           <Route path="/detail/:id" render={this.renderCharacterDetail}></Route>

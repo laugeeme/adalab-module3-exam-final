@@ -1,4 +1,4 @@
-# módulo-3-evaluación-final-laurageeme
+# Buscador de personajes RICK and MORTY
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

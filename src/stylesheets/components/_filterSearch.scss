@@ -9,9 +9,11 @@
 
   @include forTablet {
     margin-top: 50px;
+    font-size: 30px;
   }
   @include forPc {
     margin-top: 60px;
+    font-size: 40px;
   }
 
   & input {

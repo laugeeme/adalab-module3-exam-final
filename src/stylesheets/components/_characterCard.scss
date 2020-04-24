@@ -11,7 +11,7 @@
     border-radius: 20px;
 
     @include forTablet {
-      width: 220px;
+      width: 270px;
     }
 
     @include forPc {
@@ -30,7 +30,7 @@
 
     @include forTablet {
       font-size: 20px;
-      width: 220px;
+      width: 270px;
       height: 60px;
     }
 
@@ -45,13 +45,22 @@
     font-size: 14px;
 
     @include forTablet {
-        font-size: 16px;
+      font-size: 20px;
+    }
 
-      }
-  
-      @include forPc {
-        font-size: 18px;
+    @include forPc {
+      font-size: 18px;
+    }
+  }
 
-      }
+  & .characterCard-info {
+    display: flex;
+    justify-content: end;
+
+    & img {
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+    }
   }
 }

@@ -5,11 +5,11 @@ import Logo from '../images/rick-and-morty.png';
 const Header = () => {
   return (
     <header className="header-container">
-      <div class="space">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
+      <div className="space">
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
         <h1>Browse your Rick and Morty character</h1>
         <img src={Logo} alt="Logo" />
         <div className="goLink-container">

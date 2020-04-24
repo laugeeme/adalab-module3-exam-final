@@ -8,23 +8,29 @@ import FilterSearch from './FilterSearch';
 import CharacterDetail from './CharacterDetail';
 import { Switch, Route } from 'react-router-dom';
 import NoResults from './NoResults';
-/* import PageNotFound from './PageNotFound';  */
+import PageNotFound from './PageNotFound';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleInputValue = this.handleInputValue.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
-    this.getDataFromApi = this.getDataFromApi.bind(this);
-    /*     this.sortAlphabetical = this.sortAlphabetical.bind(this); */
 
     this.state = {
       data: [],
       value: '',
+      results: true,
     };
   }
 
-  getDataFromApi() {
+  componentDidMount() {
+    const dataLocal = JSON.parse(localStorage.getItem('dataValue'));
+    if (dataLocal !== null) {
+      this.setState({
+        value: dataLocal,
+      });
+    }
+
     fetchData().then((data) => {
       this.setState({
         data: data.results,
@@ -32,21 +38,8 @@ class App extends React.Component {
     });
   }
 
-  /*   sortAlphabetical() {
-    this.state.data.sort((a, b) => {
-      if (a.data.name > b.data.name) {
-        return 1;
-      }
-      if (a.data.name < b.data.name) {
-        return -1;
-      }
-      return 0;
-    });
-  } */
-
-  componentDidMount() {
-    this.getDataFromApi();
-    /*    this.sortAlphabetical(); */
+  componentDidUpdate() {
+    localStorage.setItem('dataValue', JSON.stringify(this.state.value));
   }
 
   handleInputValue(inputValue) {
@@ -58,13 +51,15 @@ class App extends React.Component {
   renderCharacterDetail(props) {
     const routeID = props.match.params.id;
     const data = this.state.data;
+    const idExist = data.some((dataObj) => dataObj.id === parseInt(routeID));
 
     for (let dataItem of data) {
       if (dataItem.id === parseInt(routeID)) {
         return <CharacterDetail dataObj={dataItem} />;
-      } /* else {
+      }
+      if (idExist !== true) {
         return <PageNotFound />;
-      }  */
+      }
     }
   }
 
@@ -75,7 +70,7 @@ class App extends React.Component {
         <Header />
         <main id="main">
           <Switch>
-            <Route exact path="/main" >
+            <Route exact path="/main">
               <FilterSearch
                 handleInputValue={this.handleInputValue}
                 value={value}

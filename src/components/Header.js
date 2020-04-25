@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React from 'react';
-import Logo from '../images/logo.png';
+import Logo from '../images/logo_transparent.png';
 
 const Header = () => {
   return (

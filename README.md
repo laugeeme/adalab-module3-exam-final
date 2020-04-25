@@ -85,9 +85,14 @@ ___
 ## Instalación: :wrench:
 
 1.Instalar [Node.js](Node.js).
+
 2.Descarga o clona el repositorio.
+
 3.Instalar dependencias locales con *$ npm install*
+
 4.Lanzar el proyecto con *$ npm start*
+
+---
 
 Este proyecto ha sido creado con  [Create React App](https://github.com/facebook/create-react-app).
 

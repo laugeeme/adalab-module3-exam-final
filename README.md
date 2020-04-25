@@ -11,17 +11,17 @@ Realizado por: [laurageeme](https://github.com/laurageeme) :woman: :computer:
 ___
 
 ## Requisitos: :clipboard:
-- Traer ==listado== de personajes desde la API:
+- Traer **listado** de personajes desde la API:
  
   `https://rickandmortyapi.com/documentation/#get-all-characters`
   
-- ==Filtrado== de personajes por nombre.
+- **Filtrado** de personajes por nombre.
 
-- ==Link== con acceso al detalle del personaje usando React-Router.
+- Link con acceso al detalle del personaje usando **React-Router**.
 
-- Uso de ==grid== para mostrar los resultados.
+- Uso de **grid** para mostrar los resultados.
 
-- Diseño ==responsive== para diferentes dispositivos.
+- Diseño **responsive** para diferentes dispositivos.
 
 
 ## Construido con: :house:

@@ -3,15 +3,14 @@
 </p>
 
 
-#· Buscador de Rick and Morty con React <img src="https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/9697433361579517871-256.png" width="40"> ·
-
+# · Buscador de Rick and Morty ·
 ---
 Ejercicio de evaluación del módulo 3 que consiste en desarrollar una página web con un listado de personajes de Rick and Morty, que podemos filtrar por el nombre del personaje.
 
 Realizado por: [laurageeme](https://github.com/laurageeme) :woman: :computer:
 ___
 
-##Requisitos: :clipboard:
+## Requisitos: :clipboard:
 - Traer ==listado== de personajes desde la API:
  
   `https://rickandmortyapi.com/documentation/#get-all-characters`
@@ -25,7 +24,7 @@ ___
 - Diseño ==responsive== para diferentes dispositivos.
 
 
-##Construido con: :house:
+## Construido con: :house:
 
 - HTML5 y CSS3
 - SASS
@@ -33,7 +32,7 @@ ___
 - VCode
 - Git y GitHub
 
-##Estructura de carpetas: :open_file_folder:
+## Estructura de carpetas: :open_file_folder:
 ```
 `- _public
    |   `favicon.ico
@@ -83,7 +82,7 @@ ___
 
 ```
 
-##Instalación: :wrench:
+## Instalación: :wrench:
 
 1.Instalar [Node.js](Node.js).
 2.Descarga o clona el repositorio.

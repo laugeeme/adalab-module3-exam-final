@@ -10,6 +10,9 @@ const Header = () => {
         <div className="particle"></div>
         <div className="particle"></div>
         <div className="particle"></div>
+      </div>
+
+      <div className="logo-container">
         <h1>Browse your Rick and Morty character</h1>
         <img src={Logo} alt="Logo" />
         <div className="goLink-container">

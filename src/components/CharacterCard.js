@@ -18,10 +18,10 @@ const CharacterCard = (props) => {
 };
 
 CharacterCard.propTypes = {
-  img: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  specie: PropTypes.string.isRequired,
-  gender: PropTypes.string.isRequired,
+  img: PropTypes.string,
+  name: PropTypes.string,
+  specie: PropTypes.string,
+  gender: PropTypes.string,
 };
 
 export default CharacterCard;

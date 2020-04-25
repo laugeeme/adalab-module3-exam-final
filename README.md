@@ -1,26 +1,94 @@
-# Buscador de personajes RICK and MORTY
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
+<p align="center">
+<img src="https://http2.mlstatic.com/rick-and-morty-pickle-peluche-original-pepino-pepinillo-D_NQ_NP_637338-MLA26815354336_022018-F.jpg" width="500">
+</p>
 
 
-### `npm run build`
+#· Buscador de Rick and Morty con React <img src="https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/9697433361579517871-256.png" width="40"> ·
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
+Ejercicio de evaluación del módulo 3 que consiste en desarrollar una página web con un listado de personajes de Rick and Morty, que podemos filtrar por el nombre del personaje.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Realizado por: [laurageeme](https://github.com/laurageeme) :woman: :computer:
+___
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##Requisitos: :clipboard:
+- Traer ==listado== de personajes desde la API:
+ 
+  `https://rickandmortyapi.com/documentation/#get-all-characters`
+  
+- ==Filtrado== de personajes por nombre.
+
+- ==Link== con acceso al detalle del personaje usando React-Router.
+
+- Uso de ==grid== para mostrar los resultados.
+
+- Diseño ==responsive== para diferentes dispositivos.
 
 
+##Construido con: :house:
 
-### `npm run build` fails to minify
+- HTML5 y CSS3
+- SASS
+- JavaScript y React
+- VCode
+- Git y GitHub
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+##Estructura de carpetas: :open_file_folder:
+```
+`- _public
+   |   `favicon.ico
+   |   `index.html
+   |   `manifest.json
+   |   `rick-and-morty.ico
+   |   `robots.txt
+
+`- _src
+   |- components
+   |  |    `App.js
+   |  |    `CharacterCard.js
+   |  |    `CharacterDetail.js
+   |  |    `CharacterList.js
+   |  |    `FilterSearch.js
+   |  |    `Header.js
+   |  |    `NoResults.js
+   |  |    `PageNotFound.js
+   |- Images
+   |- Services
+   |  |    `Fetch.js
+   |- stylesheets
+   |  |		|- base
+   |  |    	|	`- _mixins.scss
+   |  |    	|	`- _reset.scss
+   |  |    	|	`- _variables.scss
+   |  |		|- components
+   |  |    	|	`- _characterCard.scss
+   |  |    	|	`- _characterDetail.scss
+   |  |    	|	`- _characterList.scss
+   |  |    	|	`- _filterSearch.scss
+   |  |    	|	`- _header.scss
+   |  |    	|	`- _noResults.scss
+   |  |    	|	`- _pageNotFound.scss
+   |  |		`- _app.js
+   |  |		`- _footer.js
+   |  |		`- _space.js
+   |  |
+   |-index.css
+   |-index.js
+   |
+`- .gitignore
+`- .enunciado-react.pdf
+`- package-lock.json
+`- package.json
+`- README.md 
+
+```
+
+##Instalación: :wrench:
+
+1.Instalar [Node.js](Node.js).
+2.Descarga o clona el repositorio.
+3.Instalar dependencias locales con *$ npm install*
+4.Lanzar el proyecto con *$ npm start*
+
+Este proyecto ha sido creado con  [Create React App](https://github.com/facebook/create-react-app).
+

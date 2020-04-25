@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React from 'react';
-import Logo from '../images/rick-and-morty.png';
+import Logo from '../images/logo.png';
 
 const Header = () => {
   return (

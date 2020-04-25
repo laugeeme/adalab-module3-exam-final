@@ -7,6 +7,7 @@ import Human from '../images/human.png';
 import Alive from '../images/alive.png';
 import Unknown from '../images/unknown.png';
 import Dead from '../images/dead.png';
+import Back from '../images/back.png';
 
 const CharacterDetail = (props) => {
   const { image, name, species, origin, status, episode } = props.dataObj;
@@ -37,18 +38,21 @@ const CharacterDetail = (props) => {
         </div>
       </div>
       <div className="back-container">
-        <Link to="/main">Back</Link>
+        <Link to="/main">
+          <img src={Back} alt="Back" />
+        </Link>
       </div>
     </React.Fragment>
   );
 };
 
 CharacterDetail.propTypes = {
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  species: PropTypes.string.isRequired,
-  gender: PropTypes.string.isRequired,
-  status: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  name: PropTypes.string,
+  species: PropTypes.string,
+  gender: PropTypes.string,
+  status: PropTypes.string,
+  episode: PropTypes.array,
 };
 
 export default CharacterDetail;

@@ -1,0 +1,12 @@
+.footer-container {
+  background-color: black;
+  height: 70px;
+
+  & span {
+    color: white;
+    font-family: $mainFont;
+    position: absolute;
+    line-height: 70px;
+    right: 40px;
+  }
+}

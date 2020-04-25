@@ -7,7 +7,6 @@ import CharacterList from './CharacterList';
 import FilterSearch from './FilterSearch';
 import CharacterDetail from './CharacterDetail';
 import { Switch, Route } from 'react-router-dom';
-import NoResults from './NoResults';
 import PageNotFound from './PageNotFound';
 
 class App extends React.Component {
@@ -15,11 +14,11 @@ class App extends React.Component {
     super(props);
     this.handleInputValue = this.handleInputValue.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
+    this.resetValue = this.resetValue.bind(this);
 
     this.state = {
       data: [],
       value: '',
-      results: true,
     };
   }
 
@@ -48,6 +47,12 @@ class App extends React.Component {
     });
   }
 
+  resetValue() {
+    this.setState({
+      value: '',
+    });
+  }
+
   renderCharacterDetail(props) {
     const routeID = props.match.params.id;
     const data = this.state.data;
@@ -68,16 +73,17 @@ class App extends React.Component {
     return (
       <div className="app-container">
         <Header />
+        <section className="section-container"></section>
         <main id="main">
           <Switch>
             <Route exact path="/main">
               <FilterSearch
                 handleInputValue={this.handleInputValue}
                 value={value}
+                resetValue={this.resetValue}
               />
 
               <CharacterList data={data} inputValue={value} />
-              <NoResults value={value} />
             </Route>
             <Route
               path="/detail/:id"
@@ -85,7 +91,15 @@ class App extends React.Component {
             ></Route>
           </Switch>
         </main>
-        <footer className="footer-container"></footer>
+        <footer className="footer-container">
+          <a
+            href="https://github.com/laurageeme"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span>laurageeme | &copy;2020</span>
+          </a>
+        </footer>
       </div>
     );
   }

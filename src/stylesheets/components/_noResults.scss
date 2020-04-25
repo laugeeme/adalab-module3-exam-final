@@ -1,0 +1,18 @@
+.noResults-container {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  @include forTablet {
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+
+  @include forPc {
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}

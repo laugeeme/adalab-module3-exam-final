@@ -1,0 +1,9 @@
+.app-container {
+  background-color: rgb(253, 247, 247);
+  cursor: url(../images/cursor.cur), auto;
+
+  & main {
+    background-color: rgb(253, 247, 247);
+    cursor: url(../images/cursor.cur), auto;
+  }
+}

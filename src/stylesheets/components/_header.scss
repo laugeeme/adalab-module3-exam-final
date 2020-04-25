@@ -72,10 +72,14 @@
 
       @include forTablet {
         font-size: 50px;
+        position: relative;
+        z-index: 99;
       }
 
       @include forPc {
         font-size: 50px;
+        position: relative;
+        z-index: 99;
       }
     }
   }
